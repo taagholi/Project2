@@ -23,7 +23,7 @@ public class SettingReader {
 
             SAXParserFactory factory = SAXParserFactory.newInstance();
             SAXParser saxParser = factory.newSAXParser();
-            saxParser.parse("src/client/terminal.xml", myHnadler);
+            saxParser.parse("src/main/java/client/terminal.xml", myHnadler);
 
         } catch (Exception e) {
             e.printStackTrace();

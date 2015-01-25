@@ -66,7 +66,7 @@ public class XMLWriter {
             TransformerFactory transformerFactory = TransformerFactory.newInstance();
             Transformer transformer = transformerFactory.newTransformer();
             DOMSource source = new DOMSource(doc);
-            StreamResult result = new StreamResult(new  File("src/client/Response.xml").getAbsolutePath());
+            StreamResult result = new StreamResult(new  File("src/main/java/client/Response.xml").getAbsolutePath());
 
 
 

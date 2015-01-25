@@ -25,7 +25,7 @@ public class LogWriter {
 
 
 
-            RandomAccessFile randomAccessFile = new RandomAccessFile(new File("src/client/"+address).getAbsolutePath(), "rw");
+            RandomAccessFile randomAccessFile = new RandomAccessFile(new File("src/main/java/client/"+address).getAbsolutePath(), "rw");
             for (Transaction transaction : Terminal.transactions){
                     randomAccessFile.writeBytes("id: " + transaction.getId() + ", AccountId: " + transaction.getAccount() +
                             ", Message: " + transaction.getMsg());

@@ -21,10 +21,6 @@ import java.util.ArrayList;
 public class LogWriter {
 
     public void writeLogs(String address) throws Exception {
-
-
-
-
             RandomAccessFile randomAccessFile = new RandomAccessFile(new File("src/main/java/client/"+address).getAbsolutePath(), "rw");
             for (Transaction transaction : Terminal.transactions){
                     randomAccessFile.writeBytes("id: " + transaction.getId() + ", AccountId: " + transaction.getAccount() +
@@ -32,6 +28,5 @@ public class LogWriter {
                     String breakLine = "\n";
                     randomAccessFile.writeBytes(breakLine);
             }
-
     }
 }

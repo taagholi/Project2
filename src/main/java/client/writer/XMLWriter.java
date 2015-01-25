@@ -29,8 +29,6 @@ public class XMLWriter {
 
             DocumentBuilderFactory docFactory = DocumentBuilderFactory.newInstance();
             DocumentBuilder docBuilder = docFactory.newDocumentBuilder();
-
-
             Document doc = docBuilder.newDocument();
             Element rootElement = doc.createElement("transactions");
             doc.appendChild(rootElement);
@@ -53,23 +51,10 @@ public class XMLWriter {
                     transElement.setAttributeNode(attributeBalance);
                 }
             }
-
-
-
-
-
-
-
-
-
-
             TransformerFactory transformerFactory = TransformerFactory.newInstance();
             Transformer transformer = transformerFactory.newTransformer();
             DOMSource source = new DOMSource(doc);
             StreamResult result = new StreamResult(new  File("src/main/java/client/Response.xml").getAbsolutePath());
-
-
-
             transformer.transform(source, result);
         } catch (ParserConfigurationException pce) {
             pce.printStackTrace();

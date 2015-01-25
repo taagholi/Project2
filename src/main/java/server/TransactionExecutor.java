@@ -20,8 +20,6 @@ public class TransactionExecutor {
             if (account.getId().equalsIgnoreCase(accountId)) {
                 accountLock = account;
                 synchronized (accountLock){
-
-
                 if ((amount.add(account.getBalance())).compareTo(account.getUpperBound()) == 1) {
                     System.out.println("Exception in UpperBound");
                     balance = "-1";
@@ -30,10 +28,7 @@ public class TransactionExecutor {
                     jsonObject.put("result", resultMsg);
                     Server.logServer.writeLogs(account.getId(), "Deposite Transaction" , resultMsg , account.getBalance().toString());
                 } else {
-
                     BigDecimal vlaueOfSum = account.getBalance().add(amount);
-
-
                     System.out.println("Before Sleep..........Test Synchronize");
                     try {
                         Thread.sleep(10000);
@@ -55,7 +50,6 @@ public class TransactionExecutor {
     }
 
     public JSONObject withdraw(String accountId, BigDecimal amount) {
-
         JSONObject jsonObject = new JSONObject();
         String balance;
         String resultMsg;
@@ -83,6 +77,4 @@ public class TransactionExecutor {
         }
         return jsonObject;
     }
-
-
 }

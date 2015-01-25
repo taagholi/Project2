@@ -49,26 +49,22 @@ public class SettingReader {
 
 }
 
-class MyHnadler extends DefaultHandler{
+class MyHnadler extends DefaultHandler {
+
     private ArrayList<Transaction> transactions = new ArrayList<Transaction>();
     private String ip;
-
     public String getIp() {
         return ip;
     }
-
     public String getPort() {
         return port;
     }
-
     public String getPathoutlog() {
         return pathoutlog;
     }
-
     public ArrayList<Transaction> getTransactions() {
         return transactions;
     }
-
     private String port;
     private String pathoutlog;
     private boolean bserver = false;
@@ -80,7 +76,8 @@ class MyHnadler extends DefaultHandler{
     private String account;
     private Transaction transaction;
 
-    public void startElement(String uri, String localName,String qName,
+
+    public void startElement(String uri, String localName, String qName,
                              Attributes attributes) throws SAXException {
 
         if (qName.equalsIgnoreCase("server")) {
@@ -96,7 +93,7 @@ class MyHnadler extends DefaultHandler{
 
         if (qName.equalsIgnoreCase("transaction")) {
             btransaction = true;
-            transaction=new Transaction();
+            transaction = new Transaction();
             id = attributes.getValue("id");
             type = attributes.getValue("type");
             amount = attributes.getValue("amount");
@@ -114,7 +111,7 @@ class MyHnadler extends DefaultHandler{
     public void endElement(String uri, String localName,
                            String qName) throws SAXException {
 
-   }
+    }
 
     public void characters(char ch[], int start, int length) throws SAXException {
 

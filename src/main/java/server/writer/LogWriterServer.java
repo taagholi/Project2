@@ -23,13 +23,10 @@ public class LogWriterServer {
 
     public synchronized void writeLogs(String account, String typeTransaction, String resultMsg, String remainingBalance) {
         try {
-
-
                 randomAccessFile.writeBytes("Account ID: " + account + ", " + typeTransaction + ", Result: " + resultMsg +
                 ", RemainingBalance:" + remainingBalance);
                 String breakLine = "\n";
                 randomAccessFile.writeBytes(breakLine);
-
         }  catch (IOException e) {
             e.printStackTrace();
         }

@@ -11,8 +11,6 @@ public class Transaction {
     private String type;
     private BigDecimal amount;
     private String account;
-
-
     private String msg;
     private BigDecimal remainingBalance;
 

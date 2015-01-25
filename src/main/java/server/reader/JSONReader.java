@@ -18,14 +18,10 @@ import server.Account;
 
 public class JSONReader {
     public ArrayList<Account> getAccounts(String address) {
-
         JSONParser parser = new JSONParser();
         ArrayList<Account> accounts = new ArrayList<Account>();
-
         try {
             JSONArray jsonArray = (JSONArray) parser.parse(new FileReader(new File("src/main/java/" + address).getAbsolutePath()));
-
-
             for (Object object : jsonArray) {
                 Account account = new Account();
                 JSONObject jsonObject = (JSONObject) object;
@@ -46,7 +42,6 @@ public class JSONReader {
                 accounts.add(account);
 
             }
-
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         } catch (IOException e) {
@@ -54,7 +49,6 @@ public class JSONReader {
         } catch (ParseException e) {
             e.printStackTrace();
         }
-
         return accounts;
     }
 }

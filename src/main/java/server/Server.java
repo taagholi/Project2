@@ -14,10 +14,8 @@ public class Server {
 
     public static ArrayList<Account> accounts;
     public static LogWriterServer logServer;
-
     public static void main(String [] args)
     {
-
         try {
             logServer = new LogWriterServer();
             accounts= new ArrayList<Account>();
@@ -32,10 +30,8 @@ public class Server {
                     System.out.println(account.getId() + " " + account.getBalance());
                 }
             }
-
         } catch (IOException e) {
             e.printStackTrace();
         }
-
     }
 }

@@ -19,7 +19,6 @@ public class ClientHandler extends Thread {
 
     public ClientHandler(Socket socket){
         this.socket=socket;
-
     }
 
     @Override
@@ -37,8 +36,6 @@ public class ClientHandler extends Thread {
             System.out.println(input);
             parser = new JSONParser();
             jsonArrayIn = (JSONArray) parser.parse(input);
-
-
             for (Object object : jsonArrayIn) {
                 objectIn = (JSONObject) object;
                 transactionExecutor = new TransactionExecutor();
@@ -60,9 +57,7 @@ public class ClientHandler extends Thread {
                     objectOut.put("id", id);
                     objectOut.put("result", resultMsg);
                     objectOut.put("Balance", balance);
-
                 }
-
                 jsonArrayOut.add(objectOut);
             }
             DataOutputStream out = new DataOutputStream(socket.getOutputStream());

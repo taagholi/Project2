@@ -2,7 +2,7 @@
     <server ip="127.0.0.1" port="6666"/>
     <outlog path="term21374.log"></outlog>
     <transactions>
-        <!--<transaction id="1" type="deposit" amount="80" account="3327781"></transaction>-->
-        <transaction id="1" type="withdraw" amount="200" account="3327781"></transaction>
+        <transaction id="1" type="deposit" amount="80" account="3327781"></transaction>
+        <transaction id="1" type="withdraw" amount="50" account="35527439"></transaction>
     </transactions>
 </terminal>

@@ -31,17 +31,17 @@ public class TransactionExecutor {
                     Server.logServer.writeLogs(account.getId(), "Deposite Transaction" , resultMsg , account.getBalance().toString());
                 } else {
 
-                    BigDecimal test = new BigDecimal((account.getBalance().add(amount)).toString());
+                    BigDecimal vlaueOfSum = account.getBalance().add(amount);
 
 
-                    System.out.println("Before Sleep..........");
+                    System.out.println("Before Sleep..........Test Synchronize");
                     try {
-                        Thread.sleep(20000);
+                        Thread.sleep(10000);
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }
-                    System.out.println("After Sleep..........");
-                    account.setBalance(test);
+                    System.out.println("After Sleep..........Test Synchronize");
+                    account.setBalance(vlaueOfSum);
                     resultMsg = "The Transaction was successful";
                     balance = account.getBalance().toString();
                     jsonObject.put("Balance", balance);

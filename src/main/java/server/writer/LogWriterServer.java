@@ -15,7 +15,7 @@ public class LogWriterServer {
     public RandomAccessFile randomAccessFile;
     public LogWriterServer(){
         try {
-            randomAccessFile = new RandomAccessFile(new File("src/server/server.out").getAbsolutePath(), "rw");
+            randomAccessFile = new RandomAccessFile(new File("src/main/java/server/server.out").getAbsolutePath(), "rw");
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }

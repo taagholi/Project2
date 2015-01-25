@@ -23,7 +23,7 @@ public class JSONReader {
         ArrayList<Account> accounts = new ArrayList<Account>();
 
         try {
-            JSONArray jsonArray = (JSONArray) parser.parse(new FileReader(new File("src/" + address).getAbsolutePath()));
+            JSONArray jsonArray = (JSONArray) parser.parse(new FileReader(new File("src/main/java/" + address).getAbsolutePath()));
 
 
             for (Object object : jsonArray) {

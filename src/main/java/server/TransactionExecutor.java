@@ -26,6 +26,8 @@ public class TransactionExecutor {
                     resultMsg = "The final Balance is greater than UpperBound Balance";
                     jsonObject.put("Balance", balance);
                     jsonObject.put("result", resultMsg);
+                    Server.logger.error("Account ID: " + account.getId() + ", " + "Deposit Transaction" + ", Result: " + resultMsg +
+                            ", RemainingBalance:" + account.getBalance().toString());
                     Server.logServer.writeLogs(account.getId(), "Deposite Transaction" , resultMsg , account.getBalance().toString());
                 } else {
                     BigDecimal vlaueOfSum = account.getBalance().add(amount);
@@ -41,7 +43,9 @@ public class TransactionExecutor {
                     balance = account.getBalance().toString();
                     jsonObject.put("Balance", balance);
                     jsonObject.put("result", resultMsg);
-                    Server.logServer.writeLogs(account.getId(), "Deposit Transaction" , resultMsg , account.getBalance().toString());
+                    Server.logger.error("Account ID: " + account.getId() + ", " + "deposit Transaction" + ", Result: " + resultMsg +
+                            ", RemainingBalance:" + account.getBalance().toString());
+                    Server.logServer.writeLogs(account.getId(), "deposit Transaction" , resultMsg , account.getBalance().toString());
                 }
             }
             }
@@ -63,6 +67,8 @@ public class TransactionExecutor {
                         resultMsg = "The withdraw Amount is greater than InitialBalance";
                         jsonObject.put("Balance", balance);
                         jsonObject.put("result", resultMsg);
+                        Server.logger.error("Account ID: " + account.getId() + ", " + "withdraw Transaction" + ", Result: " + resultMsg +
+                                ", RemainingBalance:" + account.getBalance().toString());
                         Server.logServer.writeLogs(account.getId(), "withDraw Transaction" , resultMsg , account.getBalance().toString());
                     } else {
                         account.setBalance(account.getBalance().subtract(amount));
@@ -70,6 +76,8 @@ public class TransactionExecutor {
                         resultMsg = "The Transactions was successful.";
                         jsonObject.put("Balance", balance);
                         jsonObject.put("result", resultMsg);
+                        Server.logger.error("Account ID: " + account.getId() + ", " + "withdraw Transaction" + ", Result: " + resultMsg +
+                                ", RemainingBalance:" + account.getBalance().toString());
                         Server.logServer.writeLogs(account.getId(), "withDraw Transaction" , resultMsg , account.getBalance().toString());
                     }
                 }

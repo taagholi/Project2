@@ -3,6 +3,7 @@ package server;
 /**
  * Created by Dotin school 6 on 1/23/2015.
  */
+import org.apache.log4j.Logger;
 import server.reader.JSONReader;
 import server.writer.LogWriterServer;
 
@@ -14,6 +15,7 @@ public class Server {
 
     public static ArrayList<Account> accounts;
     public static LogWriterServer logServer;
+    final static Logger logger = Logger.getLogger(Server.class);
     public static void main(String [] args)
     {
         try {
